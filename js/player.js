@@ -32,7 +32,6 @@ class Album {
 }
 
 var jbox = new Jukebox()
-//albumsData => albumLists
 const albumList = [
     { artist: 'Operation Ivy', title: 'Energy' },
     { artist: 'Blink 182', title: 'Dude Ranch' },
@@ -41,12 +40,15 @@ const albumList = [
 
 function populateDropdown() {
     const dropdown = document.getElementById("albumSelect")
-    albumLists.forEach(albumData => {
-        const album = new Album(albumData.artist, albumData.title)
+    console.log("Dropdown:", dropdown);
+    albumList.forEach(_album => {
+        const album = new Album(_album.artist, _album.title)
         jbox.addAlbum(album)
+        console.log("Album:", album);
         const option = document.createElement("option")
+        console.log("option:", option);
         option.text = `${album.artist} - ${album.title}`
-        dropdown.add(option)
+        dropdown.appendChild(option)
     })
 }
 function playAlbum() {
