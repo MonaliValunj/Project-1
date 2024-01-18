@@ -32,20 +32,40 @@ class Album {
 }
 
 var jbox = new Jukebox()
-const album1 = new Album('Operation Ivy', 'Energy')
-const album2 = new Album('Blink 182', 'Dude Ranch')
-const album3 = new Album('New Found Glory', 'Sticks and Stones')
+//albumsData => albumLists
+const albumList = [
+    { artist: 'Operation Ivy', title: 'Energy' },
+    { artist: 'Blink 182', title: 'Dude Ranch' },
+    { artist: 'New Found Glory', title: 'Sticks and Stones' },
+]
 
-jbox.addAlbum(album1)
-jbox.addAlbum(album2)
-jbox.addAlbum(album3)
+function populateDropdown() {
+    const dropdown = document.getElementById("albumSelect")
+    albumLists.forEach(albumData => {
+        const album = new Album(albumData.artist, albumData.title)
+        jbox.addAlbum(album)
+        const option = document.createElement("option")
+        option.text = `${album.artist} - ${album.title}`
+        dropdown.add(option)
+    })
+}
+function playAlbum() {
+    const dropdown = document.getElementById("albumSelect")
+    const selectedAlbumIndex = dropdown.selectedIndex
+    if (selectedAlbumIndex !== -1) {
+        const selectedAlbum = jbox.albums[selectedAlbumIndex]
+        selectedAlbum.play()
+        alert(`${selectedAlbum.artist} - ${selectedAlbum.title} is now playing!`)
+    }
+}
+function showFavoriteAlbum() {
+    const favoriteAlbum = jbox.favoriteAlbum();
+    const favoriteAlbumDiv = document.getElementById("favoriteAlbum");
+    favoriteAlbumDiv.textContent = `Your favorite album is: ${favoriteAlbum}`;
+}
 
-album1.play()
-album2.play()
-album2.play()
-album2.play()
-album2.play()
-album2.play()
-album3.play()
+// Initialize the dropdown
+populateDropdown();
+
 
 console.log(`Your favorite album is: ${jbox.favoriteAlbum()}`)
