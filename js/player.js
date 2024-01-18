@@ -38,7 +38,6 @@ const albumList = [
     { artist: 'New Found Glory', title: 'Sticks and Stones' },
 ]
 
-function populateDropdown() {
     const dropdown = document.getElementById("albumSelect")
     console.log("Dropdown:", dropdown);
     albumList.forEach(_album => {
@@ -50,13 +49,12 @@ function populateDropdown() {
         option.text = `${album.artist} - ${album.title}`
         dropdown.appendChild(option)
     })
-}
+
 function playAlbum() {
     const dropdown = document.getElementById("albumSelect")
     const selectedAlbumIndex = dropdown.selectedIndex
     if (selectedAlbumIndex !== -1) {
         const selectedAlbum = jbox.albums[selectedAlbumIndex]
-        selectedAlbum.play()
         alert(`${selectedAlbum.artist} - ${selectedAlbum.title} is now playing!`)
     }
 }
@@ -65,9 +63,6 @@ function showFavoriteAlbum() {
     const favoriteAlbumDiv = document.getElementById("favoriteAlbum");
     favoriteAlbumDiv.textContent = `Your favorite album is: ${favoriteAlbum}`;
 }
-
-// Initialize the dropdown
-populateDropdown();
 
 
 console.log(`Your favorite album is: ${jbox.favoriteAlbum()}`)
