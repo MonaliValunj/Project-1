@@ -22,3 +22,8 @@ To run the code:
 
 * Uncomment the desired code section within the JavaScript file.
 * Execute the file in a JavaScript environment.
+
+### Example Output
+Depending on the selected code section, the output may vary. Here are some possible outputs:
+![example-output-screenshot](images/example-output.png)
+
