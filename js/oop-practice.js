@@ -1,23 +1,23 @@
 // STEP 1
 //named declaration
-// class Cat {
-//     constructor(name) {
-//         this.name = name 
-//         console.log(`${name} is the cat.`)
-//     }
-// }
-// //anonymous declaration.
-// let Dog = class {
-//     constructor(name) {
-//         this.name = name
-//         console.log(`${name} is the dog`)
-//     }
-// }
+class Cat {
+    constructor(name) {
+        this.name = name 
+        console.log(`${name} is the cat.`)
+    }
+}
+//anonymous declaration.
+let Dog = class {
+    constructor(name) {
+        this.name = name
+        console.log(`${name} is the dog`)
+    }
+}
 
 
-// STEP 2
-    // let myCat = new Cat("Cindy")
-    // let myDog = new Dog("Tommy")
+//STEP 2
+    let myCat = new Cat("Cindy")
+    let myDog = new Dog("Tommy")
 
 // STEP 3
 // class Animal {
