@@ -17,3 +17,8 @@ The code consists of several steps, each building upon the previous one:
 **Step 8:** Instantiation of Cat and Dog instances with the speak method invocation.<br>
 **Step 9:** Extension of the String prototype with a findWords method to count occurrences of a word in a string.<br>
 
+### Running the Code
+To run the code:
+
+* Uncomment the desired code section within the JavaScript file.
+* Execute the file in a JavaScript environment.
