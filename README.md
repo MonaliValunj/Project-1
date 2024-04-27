@@ -27,3 +27,5 @@ To run the code:
 Depending on the selected code section, the output may vary. Here are some possible outputs:
 ![example-output-screenshot](images/example-output.png)
 
+Here is the link to my linkedin profile - [title](https://www.linkedin.com/in/monali-valunj-19944a13b/)
+
